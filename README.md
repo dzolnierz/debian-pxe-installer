@@ -1,9 +1,7 @@
 # tftp-installer
 
-Original netboot: http://ftp.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/netboot.tar.gz
+Original netboot: https://archive.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/netboot.tar.gz
 
-Master branch is based on stable (Buster) Debian release. For previous realases please use debian/\<codename\> branches.
-
-* [debian/stretch](https://github.com/dzolnierz/tftp-installer/tree/debian/stretch)
+Based on Debian 10.13 release (buster).
 
 Use at your own risk.

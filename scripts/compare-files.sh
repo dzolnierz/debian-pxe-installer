@@ -34,14 +34,19 @@ for target in "${TARGETS[@]}"; do
 done
 for file in "${filelist[@]}"; do
 	# compare files
-	if [[ ! "$(sha256sum "${1}/${file}" | cut -d' ' -f1)" == "$(sha256sum "${2}/${file}" | cut -d' ' -f1)" ]]; then
-		for ignored in "${IGNORE[@]}" ; do
-			if [[ "${file}" == "${ignored}" ]]; then
-				continue 2
-			fi
-		done
-		echo "File ${file} needs to be updated"
-		[[ "${AUTOUPDATE}" == "yes" ]] && cp -av "${2}/${file}" "${1}/${file}"
+	if [[ ! -f "${2}/${file}" ]]; then
+		echo "${1}/${file} does not exist, needs to be removed"
+		[[ "${AUTOUPDATE}" == "yes" ]] && rm -f ${1}/${file}
+	else
+		if [[ ! "$(sha256sum "${1}/${file}" | cut -d' ' -f1)" == "$(sha256sum "${2}/${file}" | cut -d' ' -f1)" ]]; then
+			for ignored in "${IGNORE[@]}" ; do
+				if [[ "${file}" == "${ignored}" ]]; then
+					continue 2
+				fi
+			done
+			echo "File ${file} needs to be updated"
+			[[ "${AUTOUPDATE}" == "yes" ]] && cp -av "${2}/${file}" "${1}/${file}"
+		fi
 	fi
 done
 [[ "${AUTOUPDATE}" == "yes" ]] && {

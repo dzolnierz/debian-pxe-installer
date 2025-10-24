@@ -1,4 +1,4 @@
-netinstall/**
+netboot/**
 scripts/**
 !**.template
 !compare-files.sh
