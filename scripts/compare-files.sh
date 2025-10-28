@@ -11,9 +11,6 @@ AUTOUPDATE="${3}"
 
 TARGETS=(
 	"debian-installer/amd64/boot-screens/"
-	"debian-installer/amd64/grub/"
-	"debian-installer/amd64/bootnetx64.efi"
-	"debian-installer/amd64/grubx64.efi"
 	"debian-installer/amd64/initrd.gz"
 	"debian-installer/amd64/linux"
 	"debian-installer/amd64/pxelinux.0"
@@ -33,6 +30,7 @@ for target in "${TARGETS[@]}"; do
 	fi
 done
 for file in "${filelist[@]}"; do
+	echo $file
 	# compare files
 	if [[ ! -f "${2}/${file}" ]]; then
 		echo "${1}/${file} does not exist, needs to be removed"

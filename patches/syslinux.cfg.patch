@@ -1,9 +1,11 @@
---- syslinux.cfg.orig	2021-03-31 08:31:06.912578510 +0200
-+++ syslinux.cfg	2021-03-31 08:28:26.239761954 +0200
-@@ -4,4 +4,5 @@
- include debian-installer/amd64/boot-screens/menu.cfg
- default debian-installer/amd64/boot-screens/vesamenu.c32
+--- syslinux.cfg.orig	2025-10-28 13:04:34.367222073 +0100
++++ syslinux.cfg	2025-10-28 11:55:44.441668850 +0100
+@@ -2,6 +2,7 @@
+ # search path for the c32 support libraries (libcom32, libutil etc.)
+ path debian-installer/amd64/boot-screens/
  prompt 0
 -timeout 0
-+timeout 50
++timeout 100
 +totaltimeout 600
+ include debian-installer/amd64/boot-screens/menu.cfg
+ default debian-installer/amd64/boot-screens/vesamenu.c32
