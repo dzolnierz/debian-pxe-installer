@@ -1,7 +1,7 @@
 # tftp-installer
 
-Original netboot: https://archive.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/netboot.tar.gz
+Original netboot: http://archive.debian.org/debian/dists/bullseye/main/installer-amd64/current/images/netboot/netboot.tar.gz
 
-Based on Debian 10.13 release (buster).
+Based on Debian 11.11 release (bullseye).
 
 Use at your own risk.
